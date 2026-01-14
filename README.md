@@ -57,13 +57,7 @@ This project uses a lightweight, dependency-free approach for maximum performanc
 └── README.md           # Project Documentation
 ```
 
-## 🚀 How to Run
 
-Since this is a static site (HTML/CSS/JS), it requires no backend server setup.
-
-1.  **Clone the repository** (or download files).
-2.  **Open `index.html`** in any modern browser (Chrome, Edge, Firefox, Safari).
-3.  **Optional**: For the best development experience, use VS Code with the "Live Server" extension.
 
 ---
 
