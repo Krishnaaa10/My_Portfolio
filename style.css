@@ -1691,7 +1691,6 @@ body.hovering .cursor-outline {
 }
 
 /* Certifications Grid - Desktop Fix */
-/* Certifications Grid - Desktop Fix */
 .certifications-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1700,31 +1699,60 @@ body.hovering .cursor-outline {
     padding: 1rem 0;
 }
 
-/* Mobile Certifications Override */
-/* Mobile Certifications Override - Vertical Scroll Box */
+/* Mobile Swipe Hint - Hidden by default */
+.swipe-hint {
+    display: none;
+    text-align: center;
+    color: var(--accent-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    animation: bounceRight 1.5s infinite;
+}
+
+@keyframes bounceRight {
+
+    0%,
+    100% {
+        transform: translateX(0);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: translateX(5px);
+        opacity: 1;
+    }
+}
+
+/* Mobile Certifications - Horizontal Scroll */
 @media (max-width: 900px) {
     .certifications-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 16px;
+        padding-bottom: 24px;
+        padding-right: 20px;
+        scrollbar-width: none;
+        /* Hide scrollbar Firefox */
+        -ms-overflow-style: none;
+        /* Hide scrollbar IE */
+    }
 
-        /* Max Height for approx 3.5 cards (Card=320px + Gap=20px) */
-        /* 4 cards = ~1340px. Setting 1200px shows 'more to scroll' */
-        max-height: 1200px;
-        overflow-y: auto;
-        padding-right: 8px;
-        /* Space for scrollbar */
-        padding-bottom: 20px;
-
-        /* Smooth Scroll */
-        scroll-behavior: smooth;
+    .certifications-grid::-webkit-scrollbar {
+        display: none;
+        /* Hide scrollbar Chrome */
     }
 
     .cert-card {
-        min-width: 100%;
-        max-width: 100%;
-        scroll-snap-align: start;
-        /* Optional: snap to top of cards */
+        min-width: 85vw;
+        max-width: 85vw;
+        scroll-snap-align: center;
+        margin-right: 0;
+    }
+
+    .swipe-hint {
+        display: block;
+        /* Show hint only on mobile */
     }
 }
 
@@ -1734,20 +1762,13 @@ body.hovering .cursor-outline {
     transform: translateY(0) !important;
 }
 
-@media (max-width: 900px) {
-    .certifications-grid.new-grid {
-        grid-template-columns: 1fr;
-        max-width: 450px;
-    }
+.cert-card {
+    height: auto;
+    min-height: 260px;
+}
 
-    .cert-card {
-        height: auto;
-        min-height: 260px;
-    }
-
-    .cert-actions {
-        opacity: 1;
-        transform: translateY(0);
-        margin-top: 20px;
-    }
+.cert-actions {
+    opacity: 1;
+    transform: translateY(0);
+    margin-top: 20px;
 }
