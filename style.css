@@ -1691,11 +1691,22 @@ body.hovering .cursor-outline {
 }
 
 /* Certifications Grid - Desktop Fix */
+/* Certifications Grid - Desktop Fix */
 .certifications-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr) !important;
+    grid-template-columns: repeat(3, 1fr);
+    /* Removed !important to allow overrides */
     gap: 2rem;
     padding: 1rem 0;
+}
+
+/* Mobile Certifications Override */
+@media (max-width: 900px) {
+    .certifications-grid {
+        grid-template-columns: 1fr;
+        /* Stack cards on mobile */
+        gap: 20px;
+    }
 }
 
 /* Ensure Buttons visible */
