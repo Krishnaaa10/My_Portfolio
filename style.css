@@ -1701,36 +1701,30 @@ body.hovering .cursor-outline {
 }
 
 /* Mobile Certifications Override */
-/* Mobile Certifications Override - Horizontal Snap Scroll */
+/* Mobile Certifications Override - Vertical Scroll Box */
 @media (max-width: 900px) {
     .certifications-grid {
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        gap: 16px;
-        padding-bottom: 24px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+
+        /* Max Height for approx 3.5 cards (Card=320px + Gap=20px) */
+        /* 4 cards = ~1340px. Setting 1200px shows 'more to scroll' */
+        max-height: 1200px;
+        overflow-y: auto;
+        padding-right: 8px;
         /* Space for scrollbar */
-        padding-right: 20px;
-        /* End padding */
+        padding-bottom: 20px;
 
-        /* Hide scrollbar for cleaner look */
-        scrollbar-width: none;
-        /* Firefox */
-        -ms-overflow-style: none;
-        /* IE/Edge */
-    }
-
-    .certifications-grid::-webkit-scrollbar {
-        display: none;
-        /* Chrome/Safari */
+        /* Smooth Scroll */
+        scroll-behavior: smooth;
     }
 
     .cert-card {
-        min-width: 85vw;
-        /* Show mostly one card */
-        max-width: 85vw;
-        scroll-snap-align: center;
-        margin-right: 0;
+        min-width: 100%;
+        max-width: 100%;
+        scroll-snap-align: start;
+        /* Optional: snap to top of cards */
     }
 }
 
