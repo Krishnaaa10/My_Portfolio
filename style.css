@@ -1701,11 +1701,36 @@ body.hovering .cursor-outline {
 }
 
 /* Mobile Certifications Override */
+/* Mobile Certifications Override - Horizontal Snap Scroll */
 @media (max-width: 900px) {
     .certifications-grid {
-        grid-template-columns: 1fr;
-        /* Stack cards on mobile */
-        gap: 20px;
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 16px;
+        padding-bottom: 24px;
+        /* Space for scrollbar */
+        padding-right: 20px;
+        /* End padding */
+
+        /* Hide scrollbar for cleaner look */
+        scrollbar-width: none;
+        /* Firefox */
+        -ms-overflow-style: none;
+        /* IE/Edge */
+    }
+
+    .certifications-grid::-webkit-scrollbar {
+        display: none;
+        /* Chrome/Safari */
+    }
+
+    .cert-card {
+        min-width: 85vw;
+        /* Show mostly one card */
+        max-width: 85vw;
+        scroll-snap-align: center;
+        margin-right: 0;
     }
 }
 
