@@ -2,7 +2,7 @@
 
 A modern, high-performance personal portfolio website designed to showcase full-stack development skills, certifications, and projects. Built with a focus on **premium aesthetics**, **smooth interactions**, and **clean code**.
 
-![Portfolio Preview](Images/Handshake.webp)
+
 
 ## 🛠️ Tech Stack
 
