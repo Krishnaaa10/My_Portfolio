@@ -59,6 +59,4 @@ This project uses a lightweight, dependency-free approach for maximum performanc
 
 
 
----
 
-&copy; 2025 Shrikrishna Patel. Designed & Built with ❤️.
